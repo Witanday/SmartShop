@@ -2,6 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const cookieParser= require("cookie-parser");
 const PORT= process.env.PORT ||8080;
 //Import ROUTES
 
@@ -16,10 +19,13 @@ mongoose.connect(process.env.DB).then(()=>console.log("DB CONNECTED!!!"),
 }).catch(err=>{console.log(err)})
 
 
+//Middlewares
+app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use(cookieParser());
+
 
 //ROUTES middleware
-
-
 app.use("/api",userRoutes);
 
 
