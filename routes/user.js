@@ -4,7 +4,7 @@ const router = express.Router();
 const {signup} = "../controllers/user.js"
 
 
-router.signup("/signup", signup);
+router.post("/signup", signup);
 
 
 module.exports = router;
