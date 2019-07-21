@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const {sayHi} = "../controllers/user.js"
+const {signup} = "../controllers/user.js"
 
 
-router.get("/", sayHi);
+router.signup("/signup", signup);
 
 
 module.exports = router;
