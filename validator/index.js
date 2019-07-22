@@ -11,5 +11,12 @@ exports.validate = (method) => {
         body('status').optional().isIn(['enabled', 'disabled'])
        ]   
     }
+    case 'signin': {
+        return [ 
+           body('email', 'Invalid email').exists().isEmail(),
+           body('password','Password must contain at least 6 caracters ').exists().isLength({ min: 6 }),
+           body('password','Password must contain a number').matches(/\d/),
+          ]   
+       }
   }
 }
