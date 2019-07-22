@@ -10,7 +10,7 @@ const PORT= process.env.PORT ||8080;
 
 //Import ROUTES
 
-const userRoutes= require("./routes/user");
+const authRoutes= require("./routes/auth");
 
 
 
@@ -29,7 +29,7 @@ app.use(expressValidator());
 
 
 //ROUTES middleware
-app.use("/api",userRoutes);
+app.use("/api",authRoutes);
 
 
 
