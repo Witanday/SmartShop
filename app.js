@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cookieParser= require("cookie-parser");
+const expressValidator= require("express-validator");
 const PORT= process.env.PORT ||8080;
+
 //Import ROUTES
 
 const userRoutes= require("./routes/user");
@@ -23,6 +25,7 @@ mongoose.connect(process.env.DB).then(()=>console.log("DB CONNECTED!!!"),
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(expressValidator());
 
 
 //ROUTES middleware
