@@ -12,7 +12,8 @@ const PORT= process.env.PORT ||8080;
 
 const authRoutes= require("./routes/auth");
 const userRoutes= require("./routes/user");
-
+const categoryRoutes= require("./routes/category");
+const productRoutes= require("./routes/product");
 
 //DB
 mongoose.connect(process.env.DB).then(()=>console.log("DB CONNECTED!!!"),
@@ -31,6 +32,8 @@ app.use(expressValidator());
 //ROUTES middleware
 app.use("/api",authRoutes);
 app.use("/api",userRoutes);
+app.use("/api",categoryRoutes);
+app.use("/api",productRoutes);
 
 
 
