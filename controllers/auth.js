@@ -5,7 +5,7 @@ const expressJwt = require("express-jwt"); // for authorization check
 const { validationResult } = require('express-validator/check');
 
 
-const {errorHandler}= require("../helpers/dbErrorHandler")
+const {errorHandler}= require("../helpers/dbErrorHandler");
 
 
 
